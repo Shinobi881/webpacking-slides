@@ -192,8 +192,7 @@ export default class Presentation extends React.Component {
         {/* Transpiling */}
           <Slide transition={["fade"]} bgColor="background" textColor="text">
             <Heading>Transpiling</Heading>
-            <br></br>
-            <Code fit>$ git checkout 03-es6ing</Code>
+            
             <List>
               <Appear><ListItem>es2015 (via Babel)</ListItem></Appear>
               <Appear><ListItem>typescript</ListItem></Appear>
@@ -208,6 +207,8 @@ export default class Presentation extends React.Component {
                 </ListItem>
               </Appear>
             </List>
+            <br></br>
+            <Code fit>$ git checkout 03-es6ing</Code>
           </Slide>
         {/* Component */}
           <Slide transition={["fade"]} bgColor="background" textColor="text">
@@ -225,20 +226,55 @@ export default class Presentation extends React.Component {
             <br></br>
             <Code fit>$ git checkout 05-Reacting</Code>
           </Slide>
+        {/* Bare bones config */}
+          <Slide transition={["fade"]} bgColor="background">
+            <Heading>Bare Config</Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/bare-config.example")}
+              margin="20px auto"
+            />
+          </Slide>
+        {/* ES6/7 config */}
+          <Slide transition={["fade"]} bgColor="background">
+            <Heading>ES6/7 Config</Heading>
+            <br></br>
+            <Heading textSize={20}><Code>webpack.config.js</Code></Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/esnext-config.example")}
+              margin="20px auto"
+            />
+            <Heading textSize={20}><Code>.babelrc</Code></Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/esnext-bashrc.example")}
+              margin="20px auto"
+            />
+          </Slide>
+        {/* React config */}
+          <Slide transition={["fade"]} bgColor="background">
+            <Heading>React Config</Heading>
+            <br></br>
+            <Heading textSize={20}><Code>webpack.config.js</Code></Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/react-config.example")}
+              margin="20px auto"
+            />
+            <Heading textSize={20}><Code>.babelrc</Code></Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/react-bashrc.example")}
+              margin="20px auto"
+            />
+          </Slide>
         {/* Credits */}
           <Slide transition={["zoom"]} bgColor="primary">            
             <Heading size={1} fit caps>
-              A ReactJS Presentation Library
+              
             </Heading>
-            <Heading size={1} fit caps textColor="black">
-              Where You Can Write Your Decks In JSX
-            </Heading>
-            <Link href="https://github.com/FormidableLabs/spectacle">
-              <Text bold caps textColor="tertiary">View on Github</Text>
-            </Link>
-            <Text textSize="1.5em" margin="20px 0px 0px" bold>Hit Your Right Arrow To Begin!</Text>
-          </Slide>
-          
+          </Slide>          
         </Deck>
       </Spectacle>
     );

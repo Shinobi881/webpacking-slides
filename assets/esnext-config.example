@@ -1,0 +1,11 @@
+module.exports = {
+  entry: './index.jsx', // Relative path
+  output: {
+    filename: './bundle.js' // Relative path
+  },
+  module: {
+    loaders: [
+      { test: /\.jsx?$/, loader: 'babel', exclude: /node_modules/ }
+    ]
+  }
+}

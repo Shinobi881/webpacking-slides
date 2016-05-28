@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 import { Slide, List, ListItem, Appear } from 'spectacle';
 
 export default class Intro extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
+  console.log(this.props);
     return (
-      <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+      <Slide>
         <List>
           <Appear><ListItem>Webpack and NPM</ListItem></Appear>
           <Appear><ListItem>Babel</ListItem></Appear>
