@@ -21,6 +21,7 @@ import {
   Spectacle,
   Text
 } from "spectacle";
+import CodeSlide from 'spectacle-code-slide';
 
 // Import image preloader util
 import preloader from "spectacle/lib/utils/preloader";
@@ -42,41 +43,116 @@ const images = {
   city: require("../assets/city.jpg"),
   kat: require("../assets/kat.png"),
   logo: require("../assets/formidable-logo.svg"),
-  markdown: require("../assets/markdown.png")
+  markdown: require("../assets/markdown.png"),
+  webpack: require("../assets/webpack2.png")
 };
 
 preloader(images);
 
-const theme = createTheme({
-  primary: "#ff4081"
+const videoGames = createTheme({
+  bgDark: "#412854",
+  bgLight: "#4cc35b",
+  headingDark: "#ff4081",
+  headingLight: "#d8d8d8",
+  textLight: "#68da23",
+  textDark: "#120a3d",
+
+
 });
 
 export default class Presentation extends React.Component {
   render() {
     return (
-      <Spectacle theme={theme}>
+      <Spectacle theme={videoGames}>
         <Deck transition={["zoom", "slide"]} transitionDuration={500}>
-          {/* Topics to cover */}
-          <Slide transition={["fade"]} bgColor="primary" textColor="secodary">
-            <Heading size={1} fit caps lineHeight={1} textColor="black">
+        {/* Intro slide */}
+          <Slide transition={["fade"]} bgColor="bgLight" textColor="textDark">
+          <Image src={images.webpack.replace("/", "")} margin="0px auto 40px" height="293px"/>
+            <Heading size={1} fit caps lineHeight={1} textColor="text">
               Webpacking
             </Heading>
             <Appear>
-              <Heading size={2} fit caps textColor="black">
-                An introduction to Webpack
+              <Heading size={2} fit caps textColor="text">
+                An introduction to the Webpack module bundler
               </Heading>
             </Appear>
               
-          </Slide>{/* Topics to cover */}
-          <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          </Slide>
+        {/* Why Webpack */}
+          <Slide transition={["fade"]} bgColor="bgLight" textColor="textDark">
+          <Image src={images.webpack.replace("/", "")} margin="0px auto 40px" height="293px"/>
+            <Heading size={1} fit caps lineHeight={1} textColor="text">
+              Why Webpack?
+            </Heading>
+            <Image src={images.webpack.replace("/", "")} margin="0px auto 40px" height="293px"/>              
+          </Slide>
+        {/* React Ecosystem */}
+          <Slide transition={["fade"]} bgColor="background" textColor="text">
+            <Heading caps>React Ecosystem</Heading>
             <List>
-              <Appear><ListItem>Webpack and NPM</ListItem></Appear>
-              <Appear><ListItem>Babel</ListItem></Appear>
-              <Appear><ListItem>ES5-ES6/7</ListItem></Appear>
-              <Appear><ListItem>Hot Module Replacement</ListItem></Appear>
               <Appear><ListItem>React</ListItem></Appear>
+              <Appear><ListItem>Redux</ListItem></Appear>
+              <Appear><ListItem>ES6/7</ListItem></Appear>
+              <Appear><ListItem>Webpack</ListItem></Appear>
+              <Appear><ListItem>Babel</ListItem></Appear>
+              <Appear><ListItem>Your favorite testing suite</ListItem></Appear>
+              <Appear><ListItem>Your favorite preprocessor</ListItem></Appear>
+              <Appear><ListItem>RxJS</ListItem></Appear>
+              <Appear><ListItem>A million other things </ListItem></Appear>
             </List>
           </Slide>
+        {/* Topics to cover */}
+          <Slide transition={["zoom", "fade"]} transitionDuration={500} bgColor="bgLight" textColor="textDark">         
+            <Heading caps fit>Coverage?</Heading>
+            <Layout>
+              <Fill>
+                <Heading size={2} caps >Yep!</Heading>
+                <List>
+                  <Appear><ListItem>Webpack and NPM</ListItem></Appear>
+                  <Appear><ListItem>Babel</ListItem></Appear>
+                  <Appear><ListItem>ES5-ES6/7</ListItem></Appear>
+                  <Appear><ListItem>Hot Module Replacement</ListItem></Appear>
+                  <Appear><ListItem>React</ListItem></Appear>
+                </List>
+              </Fill>
+              <Fill>
+                <Heading size={2} caps >Nope!</Heading>
+                <List>
+                  <Appear><ListItem>Browserify</ListItem></Appear>
+                  <Appear><ListItem>Grunt</ListItem></Appear>
+                  <Appear><ListItem>Gulp</ListItem></Appear>
+                  <Appear><ListItem>JSPM</ListItem></Appear>
+                  <Appear><ListItem>Not much else</ListItem></Appear>
+                </List>
+              </Fill>
+            </Layout>
+          </Slide>         
+        {/* Use Cases */}
+          <Slide transition={["fade"]} bgColor="background" textColor="text">
+            <Heading caps>Use Cases</Heading>
+            <List>
+              <Appear><ListItem>CommonJS</ListItem></Appear>
+              <Appear><ListItem>Modularized Code</ListItem></Appear>
+              <Appear><ListItem>Hot Module Replacement</ListItem></Appear>
+              <Appear><ListItem>Bundling code</ListItem></Appear>
+              <Appear><ListItem>Transpiling</ListItem></Appear>
+              <Appear><ListItem>Awesome for Component Libraries (React)</ListItem></Appear>
+            </List>
+          </Slide>
+        {/* Let's get started */}
+          <Slide transition={["fade"]} bgColor="background" textColor="text">
+            <Heading caps>Let's Get It Started</Heading>            
+          </Slide>
+        {/* Let's get started */}
+          <Slide transition={["fade"]} bgColor="background" textColor="text">
+            <Heading>CommonJS</Heading>
+            <CodePane
+              lang="jsx"
+              source={require("raw!../assets/commonjs.example")}
+              margin="20px auto"
+            />
+          </Slide>
+        {/* Use Cases */}
           <Slide transition={["zoom"]} bgColor="primary">
             
             <Heading size={1} fit caps>
