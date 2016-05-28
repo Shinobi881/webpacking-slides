@@ -1,0 +1,22 @@
+var TopBar = function (_Component) {
+    _inherits(TopBar, _Component);
+  
+    function TopBar() {
+      _classCallCheck(this, TopBar);
+  
+      return _possibleConstructorReturn(this, Object.getPrototypeOf(TopBar).apply(this, arguments));
+    }
+  
+    _createClass(TopBar, [{
+      key: 'render',
+      value: function render() {
+        return _react2.default.createElement(
+          'div',
+          { id: 'top-bar' },
+          _react2.default.createElement(_filter2.default, null)
+        );
+      }
+    }]);
+  
+    return TopBar;
+  }(_react.Component);

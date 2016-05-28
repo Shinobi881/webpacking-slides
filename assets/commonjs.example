@@ -1,7 +1,4 @@
 const _ = require('lodash');
+const test = require('./test.js');
 
-const arr = [, 2, 3, 4, 5];
-
-const test = _.each(arr, val => document.write(val));
-
-module.exports = test;
+test('CommonJS');

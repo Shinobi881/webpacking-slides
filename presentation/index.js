@@ -7,6 +7,7 @@ import {
   BlockQuote,
   Cite,
   CodePane,
+  Code,
   Deck,
   Fill,
   Heading,
@@ -80,7 +81,6 @@ export default class Presentation extends React.Component {
           </Slide>
         {/* Why Webpack */}
           <Slide transition={["fade"]} bgColor="bgLight" textColor="textDark">
-          <Image src={images.webpack.replace("/", "")} margin="0px auto 40px" height="293px"/>
             <Heading size={1} fit caps lineHeight={1} textColor="text">
               Why Webpack?
             </Heading>
@@ -136,25 +136,97 @@ export default class Presentation extends React.Component {
               <Appear><ListItem>Hot Module Replacement</ListItem></Appear>
               <Appear><ListItem>Bundling code</ListItem></Appear>
               <Appear><ListItem>Transpiling</ListItem></Appear>
-              <Appear><ListItem>Awesome for Component Libraries (React)</ListItem></Appear>
+              <Appear><ListItem>Component Based Libraries (React)</ListItem></Appear>
             </List>
           </Slide>
         {/* Let's get started */}
           <Slide transition={["fade"]} bgColor="background" textColor="text">
-            <Heading caps>Let's Get It Started</Heading>            
+            <Heading caps>Let's Get It Started</Heading>
+            <br></br>
+            <Text bold textColor="textLight">Repo:</Text><Link href="https://github.com/Shinobi881/webpacking"><Code textColor="#ecfb77">Shinobi881/webpacking</Code></Link>            
           </Slide>
-        {/* Let's get started */}
+        {/* CommonJS */}
           <Slide transition={["fade"]} bgColor="background" textColor="text">
             <Heading>CommonJS</Heading>
+            <br></br>
+            
+            
+            <List>
+              <Appear><ListItem><Code fit>module.exports</Code></ListItem></Appear>
+              <Appear>
+                <CodePane
+                  lang="javascript"
+                  source={require("raw!../assets/commonjs2.example")}
+                  margin="20px auto"
+                  fit
+                />
+              </Appear>
+              <Appear><ListItem><Code textColor="text" fit>require</Code></ListItem></Appear>
+              <Appear>
+                <CodePane
+                  lang="javascript"
+                  source={require("raw!../assets/commonjs.example")}
+                  margin="20px auto"
+                  fit
+                />
+              </Appear>
+            </List>
+            <Code fit>$ git checkout 02-make-it-work</Code>
+          </Slide>
+        {/* Hot Module Replacement*/}
+        <Slide transition={["fade"]} bgColor="background" textColor="text">
+            <Heading>HMR</Heading>
+            <Heading textSize={50}>Dev server</Heading>
             <CodePane
-              lang="jsx"
-              source={require("raw!../assets/commonjs.example")}
+              lang="bash"
+              source={require("raw!../assets/devserver.example")}
+              margin="20px auto"
+            />
+            <Heading textSize={50}>Middleware</Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/devmiddleware.example")}
               margin="20px auto"
             />
           </Slide>
-        {/* Use Cases */}
-          <Slide transition={["zoom"]} bgColor="primary">
-            
+        {/* Transpiling */}
+          <Slide transition={["fade"]} bgColor="background" textColor="text">
+            <Heading>Transpiling</Heading>
+            <br></br>
+            <Code fit>$ git checkout 03-es6ing</Code>
+            <List>
+              <Appear><ListItem>es2015 (via Babel)</ListItem></Appear>
+              <Appear><ListItem>typescript</ListItem></Appear>
+              <Appear><ListItem>elm</ListItem></Appear>
+              <Appear><ListItem>oj - (Objective-C)</ListItem></Appear>
+              <Appear><ListItem>coffee</ListItem></Appear>
+              <Appear>
+                <ListItem>
+                  <Link href="https://webpack.github.io/docs/list-of-loaders.html#dialects">
+                    and more...
+                  </Link>
+                </ListItem>
+              </Appear>
+            </List>
+          </Slide>
+        {/* Component */}
+          <Slide transition={["fade"]} bgColor="background" textColor="text">
+            <Heading>Component Architechture</Heading>
+            <List>
+              <Appear><ListItem>React</ListItem></Appear>
+              <Appear><ListItem>Angular 1.5</ListItem></Appear>
+              <Appear><ListItem>Angular 2</ListItem></Appear>
+              <Appear><ListItem>Javascript || ES6/7</ListItem></Appear>
+            </List>
+          </Slide>
+        {/* React */}
+          <Slide transition={["fade"]} bgColor="background" textColor="text">
+            <Heading>React</Heading>
+            <br></br>
+            <Code fit>$ git checkout 05-Reacting</Code>
+          </Slide>
+        {/* Credits */}
+          <Slide transition={["zoom"]} bgColor="primary">            
             <Heading size={1} fit caps>
               A ReactJS Presentation Library
             </Heading>
@@ -166,93 +238,7 @@ export default class Presentation extends React.Component {
             </Link>
             <Text textSize="1.5em" margin="20px 0px 0px" bold>Hit Your Right Arrow To Begin!</Text>
           </Slide>
-          <Slide transition={["slide"]} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
-            <Image src={images.kat.replace("/", "")} margin="0px auto 40px" height="293px"/>
-            <Heading size={2} caps fit textColor="primary" textFont="primary">
-              Wait what?
-            </Heading>
-          </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
-            <CodePane
-              lang="jsx"
-              source={require("raw!../assets/deck.example")}
-              margin="20px auto"
-            />
-          </Slide>
-          <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
-            <Appear fid="1">
-              <Heading size={1} caps fit textColor="primary">
-                Full Width
-              </Heading>
-            </Appear>
-            <Appear fid="2">
-              <Heading size={1} caps fit textColor="tertiary">
-                Adjustable Darkness
-              </Heading>
-            </Appear>
-            <Appear fid="3">
-              <Heading size={1} caps fit textColor="primary">
-                Background Imagery
-              </Heading>
-            </Appear>
-          </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary">
-            <Heading caps fit>Flexible Layouts</Heading>
-            <Layout>
-              <Fill>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Left
-                </Heading>
-              </Fill>
-              <Fill>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Right
-                </Heading>
-              </Fill>
-            </Layout>
-          </Slide>
-          <Slide transition={["slide"]} bgColor="black">
-            <BlockQuote>
-              <Quote>Wonderfully formatted quotes</Quote>
-              <Cite>Ken Wheeler</Cite>
-            </BlockQuote>
-          </Slide>
-          <Slide transition={["spin", "zoom"]} bgColor="tertiary">
-            <Heading caps fit size={1} textColor="primary">
-              Inline Markdown
-            </Heading>
-            <Markdown>
-              {`
-![Markdown Logo](${images.markdown.replace("/", "")})
-
-You can write inline images, [Markdown Links](http://commonmark.org), paragraph text and most other markdown syntax
-* Lists too!
-* With ~~strikethrough~~ and _italic_
-* And lets not forget **bold**
-              `}
-            </Markdown>
-          </Slide>
-          <Slide transition={["slide", "spin"]} bgColor="primary">
-            <Heading caps fit size={1} textColor="tertiary">
-              Smooth
-            </Heading>
-            <Heading caps fit size={1} textColor="secondary">
-              Combinable Transitions
-            </Heading>
-          </Slide>
           
-          <Slide transition={["slide"]} bgColor="primary">
-            <Heading size={1} caps fit textColor="tertiary">
-              Your presentations are interactive
-            </Heading>
-            <Interactive/>
-          </Slide>
-          <Slide transition={["spin", "slide"]} bgColor="tertiary">
-            <Heading size={1} caps fit lineHeight={1.5} textColor="primary">
-              Made with love in Seattle by
-            </Heading>
-            <Link href="http://www.formidablelabs.com"><Image width="100%" src={images.logo}/></Link>
-          </Slide>
         </Deck>
       </Spectacle>
     );
