@@ -2,7 +2,7 @@
   "name": "webpacking",
   "version": "1.0.1",
   "description": "An introduction to Webpack Module Bundler",
-  "repository": "",
+  "repository": "https://github.com/Shinobi881/webpacking-slides",
   "credits": {
     "name": "Spectacle",
     "description": "A ReactJS based presentation library",

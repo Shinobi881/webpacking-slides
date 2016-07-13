@@ -22,6 +22,7 @@ import {
   Spectacle,
   Text
 } from "spectacle";
+
 import CodeSlide from 'spectacle-code-slide';
 
 // Import image preloader util
@@ -56,9 +57,7 @@ const videoGames = createTheme({
   headingDark: "#ff4081",
   headingLight: "#d8d8d8",
   textLight: "#68da23",
-  textDark: "#120a3d",
-
-
+  textDark: "#120a3d"
 });
 
 export default class Presentation extends React.Component {
@@ -79,6 +78,17 @@ export default class Presentation extends React.Component {
             </Appear>
               
           </Slide>
+        {/* Before we get started */}
+          <Slide transition={["fade"]} bgColor="bgLight" textColor="textDark">
+            <Heading textSize={38} fit caps lineHeight={1} textColor="text">
+              Setup
+            </Heading>
+            <List>
+              <ListItem><Code>github.com/Shinobi881/webpacking</Code></ListItem>
+              <ListItem><Code>npm i</Code></ListItem>
+              <ListItem><Code>git tag</Code></ListItem>
+            </List>            
+          </Slide>
         {/* Why Webpack */}
           <Slide transition={["fade"]} bgColor="bgLight" textColor="textDark">
             <Heading size={1} fit caps lineHeight={1} textColor="text">
@@ -90,15 +100,17 @@ export default class Presentation extends React.Component {
           <Slide transition={["fade"]} bgColor="background" textColor="text">
             <Heading caps>React Ecosystem</Heading>
             <List>
-              <Appear><ListItem>React</ListItem></Appear>
-              <Appear><ListItem>Redux</ListItem></Appear>
-              <Appear><ListItem>ES6/7</ListItem></Appear>
-              <Appear><ListItem>Webpack</ListItem></Appear>
-              <Appear><ListItem>Babel</ListItem></Appear>
-              <Appear><ListItem>Your favorite testing suite</ListItem></Appear>
-              <Appear><ListItem>Your favorite preprocessor</ListItem></Appear>
-              <Appear><ListItem>RxJS</ListItem></Appear>
-              <Appear><ListItem>A million other things </ListItem></Appear>
+              <Appear><ListItem textColor="#ecfb77">React</ListItem></Appear>
+              <Appear><ListItem textColor="#ecfb77">Redux</ListItem></Appear>
+              <Appear><ListItem textColor="#ecfb77">ES6/7</ListItem></Appear>
+              <Appear><ListItem textColor="#ecfb77">Webpack</ListItem></Appear>
+              <Appear><ListItem textColor="#ecfb77">Babel</ListItem></Appear>
+              <Appear><ListItem textColor="#ecfb77">Enzyme(testing)</ListItem></Appear>
+              <Appear><ListItem textColor="#ecfb77">Your favorite preprocessor</ListItem></Appear>
+              <Appear><ListItem textColor="#ecfb77">RxJS</ListItem></Appear>
+              <Appear><ListItem textColor="#ecfb77">postCSS</ListItem></Appear>
+              <Appear><ListItem textColor="#ecfb77">autoPrefixer</ListItem></Appear>
+              <Appear><ListItem textColor="#ecfb77">A million other things</ListItem></Appear>
             </List>
           </Slide>
         {/* Topics to cover */}
@@ -131,12 +143,12 @@ export default class Presentation extends React.Component {
           <Slide transition={["fade"]} bgColor="background" textColor="text">
             <Heading caps>Use Cases</Heading>
             <List>
-              <Appear><ListItem>CommonJS</ListItem></Appear>
-              <Appear><ListItem>Modularized Code</ListItem></Appear>
-              <Appear><ListItem>Hot Module Replacement</ListItem></Appear>
-              <Appear><ListItem>Bundling code</ListItem></Appear>
-              <Appear><ListItem>Transpiling</ListItem></Appear>
-              <Appear><ListItem>Component Based Libraries (React)</ListItem></Appear>
+              <Appear><ListItem textColor="#ecfb77">CommonJS</ListItem></Appear>
+              <Appear><ListItem textColor="#ecfb77">Modularized Code</ListItem></Appear>
+              <Appear><ListItem textColor="#ecfb77">Bundling code</ListItem></Appear>
+              <Appear><ListItem textColor="#ecfb77">Transpiling</ListItem></Appear>
+              <Appear><ListItem textColor="#ecfb77">Hot Module Replacement</ListItem></Appear>
+              <Appear><ListItem textColor="#ecfb77">Component Based Libraries (React)</ListItem></Appear>
             </List>
           </Slide>
         {/* Let's get started */}
@@ -152,7 +164,7 @@ export default class Presentation extends React.Component {
             
             
             <List>
-              <Appear><ListItem><Code fit>module.exports</Code></ListItem></Appear>
+              <Appear><ListItem><Code fit textColor="headingDark">module.exports</Code></ListItem></Appear>
               <Appear>
                 <CodePane
                   lang="javascript"
@@ -161,7 +173,7 @@ export default class Presentation extends React.Component {
                   fit
                 />
               </Appear>
-              <Appear><ListItem><Code textColor="text" fit>require</Code></ListItem></Appear>
+              <Appear><ListItem><Code textColor="headingDark"fit>require</Code></ListItem></Appear>
               <Appear>
                 <CodePane
                   lang="javascript"
@@ -171,34 +183,18 @@ export default class Presentation extends React.Component {
                 />
               </Appear>
             </List>
-            <Code fit>$ git checkout 02-make-it-work</Code>
-          </Slide>
-        {/* Hot Module Replacement*/}
-        <Slide transition={["fade"]} bgColor="background" textColor="text">
-            <Heading>HMR</Heading>
-            <Heading textSize={50}>Dev server</Heading>
-            <CodePane
-              lang="bash"
-              source={require("raw!../assets/devserver.example")}
-              margin="20px auto"
-            />
-            <Heading textSize={50}>Middleware</Heading>
-            <CodePane
-              lang="js"
-              source={require("raw!../assets/devmiddleware.example")}
-              margin="20px auto"
-            />
+            <Code fit textColor="headingDark">$ git checkout 02-make-it-work</Code>
           </Slide>
         {/* Transpiling */}
           <Slide transition={["fade"]} bgColor="background" textColor="text">
-            <Heading>Transpiling</Heading>
+            <Heading>Transpiling/Compiling</Heading>
             
             <List>
-              <Appear><ListItem>es2015 (via Babel)</ListItem></Appear>
-              <Appear><ListItem>typescript</ListItem></Appear>
-              <Appear><ListItem>elm</ListItem></Appear>
-              <Appear><ListItem>oj - (Objective-C)</ListItem></Appear>
-              <Appear><ListItem>coffee</ListItem></Appear>
+              <Appear><ListItem textColor="#ecfb77">es2015 (via Babel)</ListItem></Appear>
+              <Appear><ListItem textColor="#ecfb77">typescript</ListItem></Appear>
+              <Appear><ListItem textColor="#ecfb77">elm</ListItem></Appear>
+              <Appear><ListItem textColor="#ecfb77">oj - (Objective-C)</ListItem></Appear>
+              <Appear><ListItem textColor="#ecfb77">coffee</ListItem></Appear>
               <Appear>
                 <ListItem>
                   <Link href="https://webpack.github.io/docs/list-of-loaders.html#dialects">
@@ -208,23 +204,39 @@ export default class Presentation extends React.Component {
               </Appear>
             </List>
             <br></br>
-            <Code fit>$ git checkout 03-es6ing</Code>
+            <Code fit textColor="headingDark">$ git checkout 03-es6ing</Code>
+          </Slide>
+        {/* Hot Module Replacement*/}
+          <Slide transition={["fade"]} bgColor="background">
+            <Heading textSize={80} textColor="headingLight">Bot Module Replacement</Heading>
+            <Heading textSize={40} textColor="headingDark">Dev server</Heading>
+            <CodePane
+              lang="bash"
+              source={require("raw!../assets/devserver.example")}
+              margin="20px auto"
+            />
+            <Heading textSize={40} textColor="headingDark">Middleware</Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/devmiddleware.example")}
+              margin="20px auto"
+            />
           </Slide>
         {/* Component */}
           <Slide transition={["fade"]} bgColor="background" textColor="text">
             <Heading>Component Architechture</Heading>
             <List>
-              <Appear><ListItem>React</ListItem></Appear>
-              <Appear><ListItem>Angular 1.5</ListItem></Appear>
-              <Appear><ListItem>Angular 2</ListItem></Appear>
-              <Appear><ListItem>Javascript || ES6/7</ListItem></Appear>
+              <Appear><ListItem textColor="#ecfb77">React</ListItem></Appear>
+              <Appear><ListItem textColor="#ecfb77">Angular 1.5</ListItem></Appear>
+              <Appear><ListItem textColor="#ecfb77">Angular 2</ListItem></Appear>
+              <Appear><ListItem textColor="#ecfb77">Javascript || ES6/7</ListItem></Appear>
             </List>
           </Slide>
         {/* React */}
           <Slide transition={["fade"]} bgColor="background" textColor="text">
             <Heading>React</Heading>
             <br></br>
-            <Code fit>$ git checkout 05-Reacting</Code>
+            <Code fit textColor="headingDark">$ git checkout 05-Reacting</Code>
           </Slide>
         {/* Bare bones config */}
           <Slide transition={["fade"]} bgColor="background">
@@ -272,8 +284,10 @@ export default class Presentation extends React.Component {
         {/* Credits */}
           <Slide transition={["zoom"]} bgColor="primary">            
             <Heading size={1} fit caps>
-              
+              Thank You!
             </Heading>
+            <Text>github.com/Shinobi881</Text>
+            <Text>Slides-credit: https://github.com/FormidableLabs/spectacle</Text>
           </Slide>          
         </Deck>
       </Spectacle>
