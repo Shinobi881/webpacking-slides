@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './index.jsx', // Relative path
+  entry: './index.js', // Relative path
   output: {
     filename: './bundle.js' // Relative path
   },

@@ -208,7 +208,7 @@ export default class Presentation extends React.Component {
           </Slide>
         {/* Hot Module Replacement*/}
           <Slide transition={["fade"]} bgColor="background">
-            <Heading textSize={80} textColor="headingLight">Bot Module Replacement</Heading>
+            <Heading textSize={80} textColor="headingLight">Hot Module Replacement</Heading>
             <Heading textSize={40} textColor="headingDark">Dev server</Heading>
             <CodePane
               lang="bash"
@@ -281,6 +281,59 @@ export default class Presentation extends React.Component {
               margin="20px auto"
             />
           </Slide>
+        {/* Resources */}
+          <Slide transition={["zoom"]} bgColor="primary">            
+            <Heading size={1} fit caps>
+              Resources
+            </Heading>
+            <List>
+              <ListItem>
+                <Link textSize={40} href="https://github.com/webpack/docs/issues">
+                   Webpack Docs
+                </Link>
+                <Text textSize={40}>-- Webpack documentation is being refactored</Text>
+              </ListItem>
+              <ListItem>
+                <Link textSize={40} href="https://frontendmasters.com/workshops/webpack/">
+                   Webpack Deep-Dive  
+                </Link>
+                <Text textSize={40}>-- Front-end Masters live stream event (August 8)</Text>
+              </ListItem>
+              <ListItem>
+                <Link textSize={40} href="https://github.com/Shinobi881/webpack-configs">
+                   Webpack-configs:
+                </Link>
+                <Text textSize={40}>-- A repo with different Webpack configurations</Text>
+              </ListItem>            
+            </List>
+          </Slide> 
+        {/* Community */}
+          <Slide transition={["zoom"]} bgColor="primary">            
+            <Heading size={1} fit caps>
+              Community
+            </Heading>            
+            <List>
+              <ListItem>
+                <Link href="nodeschool.io">Nodeschool.io</Link>
+                <List>
+                  <ListItem>
+                    <Link href="http://nodeschool.io/oakland/"> - Oakland(npm) - Saturday, July 16th, 1-5</Link>
+                  </ListItem>
+                  <ListItem>
+                    <Link href="http://nodeschool.io/sanfrancisco/"> - San Francisco(Mozilla) - Saturday July 23rd, 1-5</Link>
+                  </ListItem>                  
+                </List>
+              </ListItem>
+              <ListItem>
+                
+                <Text><Link href="https://wafflejs.com/">WaffleJS</Link> - 1st Wednesday of every month</Text>
+              </ListItem>
+              <ListItem>
+                
+                <Text><Link href="http://www.meetup.com/sfnode/events/224882986/">SFNode</Link> - 1st Thursday of every month</Text>
+              </ListItem>                        
+            </List>
+          </Slide> 
         {/* Credits */}
           <Slide transition={["zoom"]} bgColor="primary">            
             <Heading size={1} fit caps>
