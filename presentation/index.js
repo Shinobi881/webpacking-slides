@@ -324,13 +324,14 @@ export default class Presentation extends React.Component {
                   </ListItem>                  
                 </List>
               </ListItem>
-              <ListItem>
-                
+              <ListItem>                
                 <Text><Link href="https://wafflejs.com/">WaffleJS</Link> - 1st Wednesday of every month</Text>
               </ListItem>
-              <ListItem>
-                
+              <ListItem>                
                 <Text><Link href="http://www.meetup.com/sfnode/events/224882986/">SFNode</Link> - 1st Thursday of every month</Text>
+              </ListItem>  
+              <ListItem>                
+                <Text><Link href="http://www.meetup.com/Real-World-React/events/231573129/">Real World React</Link> - TBA</Text>
               </ListItem>                        
             </List>
           </Slide> 
